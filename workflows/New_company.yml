@@ -1,0 +1,22 @@
+version: 2.1 
+
+jobs:
+  build:
+    docker:
+      - image: thomasweise/texlive
+    steps:
+      -run:
+          name: fething the name of applied job post
+          command: alias $company-name = $1
+      -run:
+          name: creatin new folders for storing CV / letter corresponding to that company.
+          command: mkdir -p companies/{$company-name}
+
+      -run:
+          name: move the  new generated artifacts to the corresponding results.
+          command: | 
+            mv examples/cv.pdf ~/companies/{$company-name}/
+            mv examples/resume.pdf ~/companies/{$company-name}/
+
+      -store_artifacts:
+          path: ~/companies/            

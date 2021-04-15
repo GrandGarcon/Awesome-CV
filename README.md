@@ -7,7 +7,7 @@
 </h1>
 
 <p align="center">
-  LaTeX template for your outstanding job application
+  Awesome  LaTeX template for automatically generating the 
 </p>
 
 <div align="center">
